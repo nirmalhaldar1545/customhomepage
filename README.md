@@ -2,7 +2,11 @@
 
 A stunning, personalized browser start page with an animated 3D shader background and quick-access shortcuts. Designed to replace your browser's default new tab or startup page with a classy, visually immersive experience.
 
-![Preview](https://img.shields.io/badge/React-19-blue) ![Preview](https://img.shields.io/badge/Three.js-0.182-orange) ![Preview](https://img.shields.io/badge/GSAP-3.14-green) ![Preview](https://img.shields.io/badge/TailwindCSS-4.1-cyan)
+![Preview](https://img.shields.io/badge/React-19-blue) ![Preview](https://img.shields.io/badge/Three.js-0.182-orange) ![Preview](https://img.shields.io/badge/GSAP-3.14-green) ![Preview](https://img.shields.io/badge/TailwindCSS-4.1-cyan) ![Preview](https://img.shields.io/badge/TypeScript-5.9-blue)
+
+## 🌐 Live Demo
+
+**Deployed on GitHub Pages:** [https://nirmalhaldar1545.github.io/customhomepage/](https://nirmalhaldar1545.github.io/customhomepage/)
 
 ## Features
 
@@ -27,6 +31,7 @@ A stunning, personalized browser start page with an animated 3D shader backgroun
 - **[GSAP](https://greensock.com/gsap/)** - Professional-grade animations
 - **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS
 - **[Lucide React](https://lucide.dev/)** - Beautiful icons
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
 
 ## Getting Started
 
@@ -39,7 +44,7 @@ A stunning, personalized browser start page with an animated 3D shader backgroun
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/customhomepage.git
+git clone https://github.com/nirmalhaldar1545/customhomepage.git
 cd customhomepage
 ```
 
@@ -63,9 +68,47 @@ npm run build
 
 The built files will be in the `dist/` folder.
 
+## Deployment
+
+### GitHub Pages (Recommended)
+
+This project is configured for easy deployment to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+This command will:
+1. Build the project (`npm run build`)
+2. Deploy the `dist` folder to the `gh-pages` branch
+
+The site will be available at: `https://[your-username].github.io/customhomepage/`
+
+### Manual Deployment
+
+For other hosting services (Vercel, Netlify, etc.):
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+
+2. Deploy the contents of the `dist/` folder to your hosting service
+
 ## Setting as Chrome Startup Page
 
-### Method 1: Local File (Recommended)
+### Method 1: Use GitHub Pages URL (Recommended)
+
+1. Open Chrome and go to `chrome://settings/onStartup`
+
+2. Select **"Open a specific page or set of pages"**
+
+3. Click **"Add a new page"** and enter:
+   ```
+   https://nirmalhaldar1545.github.io/customhomepage/
+   ```
+
+### Method 2: Local File
 
 1. Build the project:
    ```bash
@@ -78,13 +121,13 @@ The built files will be in the `dist/` folder.
 
 4. Click **"Add a new page"** and enter:
    ```
-   file:///C:/Users/Nirmal/customhomepage/dist/index.html
+   file:///C:/Users/[YourUsername]/customhomepage/dist/index.html
    ```
    (Adjust the path to match your actual project location)
 
-### Method 2: Using a Local Server
+### Method 3: Development Server
 
-For hot-reloading during development, you can keep the dev server running:
+For hot-reloading during development:
 
 1. Start the dev server:
    ```bash
@@ -96,19 +139,11 @@ For hot-reloading during development, you can keep the dev server running:
    http://localhost:5173
    ```
 
-### Method 3: Deploy and Use
-
-Deploy to any static hosting service (Vercel, Netlify, GitHub Pages) and use that URL:
-
-1. Deploy the `dist` folder
-
-2. Set the deployed URL as your Chrome startup page
-
 ## Customization
 
 ### Changing Shortcuts
 
-Edit [`src/components/ui/infinite-hero.tsx`](src/components/ui/infinite-hero.tsx:252) to modify the quick-access buttons:
+Edit [`src/components/ui/infinite-hero.tsx`](src/components/ui/infinite-hero.tsx) to modify the quick-access buttons:
 
 ```tsx
 <a
@@ -126,7 +161,7 @@ Available icons from [Lucide](https://lucide.dev/icons/):
 
 ### Modifying the Shader
 
-The background shader can be customized in [`infinite-hero.tsx`](src/components/ui/infinite-hero.tsx:66). The fragment shader uses GLSL and creates the animated wave-like effect.
+The background shader can be customized in [`infinite-hero.tsx`](src/components/ui/infinite-hero.tsx). The fragment shader uses GLSL and creates the animated wave-like effect.
 
 ### Styling
 
@@ -158,7 +193,6 @@ customhomepage/
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
-
 ```
 
 ## Scripts
@@ -169,6 +203,7 @@ customhomepage/
 | `npm run build` | Build for production |
 | `npm run preview` | Preview production build |
 | `npm run lint` | Run ESLint |
+| `npm run deploy` | Deploy to GitHub Pages |
 
 ## Browser Support
 
@@ -182,6 +217,11 @@ WebGL support is required for the shader background.
 ## Performance
 
 The shader background uses raymarching with 256 steps, optimized for smooth performance on modern GPUs. The animation runs at 60fps on most devices.
+
+## Repository
+
+- **GitHub:** [https://github.com/nirmalhaldar1545/customhomepage](https://github.com/nirmalhaldar1545/customhomepage)
+- **Live Site:** [https://nirmalhaldar1545.github.io/customhomepage/](https://nirmalhaldar1545.github.io/customhomepage/)
 
 ## License
 
